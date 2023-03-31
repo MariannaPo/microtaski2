@@ -22,11 +22,11 @@ export const NewComponent=(props: NewComponentPropsType)=>{
         <div>
             <table>
                 
-                    {props.cars.map((car: CarsType, index: number)=>{
+                    {props.cars.map((car: CarsType, index:number )=>{
                         return(
                         <tr>
                             <td>
-                                <span> Manufacturer: {car.manufacturer}</span>
+                                <span> {index} Manufacturer: {car.manufacturer}</span>
                                 <span> Model: {car.model}</span>
                                </td> 
                             </tr>

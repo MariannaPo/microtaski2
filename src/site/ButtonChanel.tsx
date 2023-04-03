@@ -1,16 +1,16 @@
 import { type } from "os";
 import React from "react";
 
-type ButtonChanelPropsType={
-name: string,
-follower:()=>void
-}
+// type ButtonChanelPropsType={
+// name: string,
+// follower:()=>void
+// }
 
-export const ButtonChanel=(props: ButtonChanelPropsType)=>{
+export const ButtonChanel=()=>{
 
-    const OnClickBut=()=>{
-        props.follower()
-    }
+    // const OnClickBut=()=>{
+    //     props.follower()
+    // }
 
 //     const followerYT =()=>{
 //     console.log('Content govno!')
@@ -43,7 +43,7 @@ export const ButtonChanel=(props: ButtonChanelPropsType)=>{
             <button onClick={()=>onClickHandler('drochila')}>MyINST</button>
             <button onClick={()=>foo1(100200)}>1</button>
             <button onClick={foo2}>2</button> */}
-            <button onClick={OnClickBut}>{props.name}</button>
+            {/* <button onClick={OnClickBut}>{props.name}</button> */}
         </div>
     )
 }

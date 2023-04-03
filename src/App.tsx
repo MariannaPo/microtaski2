@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Header } from './site/Header';
@@ -30,17 +30,26 @@ import { ButtonChanel } from './site/ButtonChanel';
 
 function App() {
 
-  const dj=(subscriber: string,age:number)=>{
-    console.log(subscriber, age);
-  }
+  // const dj=(subscriber: string,age:number)=>{
+  //   console.log(subscriber, age);
+  // }
 
-  const ds=(subscriber:string, age: number, address: string)=>{
-    console.log(subscriber, age, address);
-  }
+  // const ds=(subscriber:string, age: number, address: string)=>{
+  //   console.log(subscriber, age, address);
+  // }
 
-  const stb=()=>{
-    console.log('Im stupid button');
+  // const stb=()=>{
+  //   console.log('Im stupid button');
     
+  // }
+  
+  let[a, setA]=useState(1)
+  
+  const plusOne=()=>{
+    setA(++a);
+  }
+  const zero=()=>{
+    setA(0)
   }
 
   return (
@@ -49,9 +58,12 @@ function App() {
     <Body titleBody={'NEW BIG BODY'}/>
     <Footer titleFooter={'NEW WERY BIG FOOTER'}/> */}
     {/* <NewComponent students={students} cars={topCars}/> */}
-    <ButtonChanel name={'GovnoChanel'} follower={()=>dj('Grisha', 45)}/>
+    {/* <ButtonChanel name={'GovnoChanel'} follower={()=>dj('Grisha', 45)}/>
     <ButtonChanel name={'DermoChanel'} follower={()=>ds('Vitek', 76, 'Ostryaki')}/>
-    <ButtonChanel name={'ProstoButton'} follower={stb}/>
+    <ButtonChanel name={'ProstoButton'} follower={stb}/> */}
+    <h1>{a}</h1>
+    <button onClick={plusOne}>Clicker</button>
+    <button onClick={zero}>0</button>
     </div>
   );
 }

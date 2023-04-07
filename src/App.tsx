@@ -6,64 +6,62 @@ import { Body } from './site/Body';
 import { Footer } from './site/Footer';
 import { NewComponent } from './site/NewComponent';
 import { ButtonChanel } from './site/ButtonChanel';
+import { type } from 'os';
+import MoneyComponent from './site/MoneyComponent';
 
 
+export type FilterType = 'all' | 'Dollars' | 'RUBLS'
 
-// const students=[
-//   {id: 1, name: 'jriofj', age: 23},
-//   {id: 2, name: 'jfrdegvwewrfj', age: 26},
-//   {id: 3, name: 'l;a;ofj', age: 33},
-//   {id: 4, name: 'hyew3yfj', age: 12},
-//   {id: 5, name: 'jrfrjeifjre', age: 43},
-//   {id: 1, name: 'jriofj', age: 23},
-//   {id: 2, name: 'jfrdegvwewrfj', age: 26},
-//   {id: 3, name: 'l;a;ofj', age: 33},
-//   {id: 4, name: 'hyew3yfj', age: 12},
-//   {id: 5, name: 'jrfrjeifjre', age: 43},
-// ]
 
-// const topCars = [
-//   {manufacturer:'BMW', model:'m5cs'},
-//   {manufacturer:'Mercedes', model:'e63s'},
-//   {manufacturer:'Audi', model:'rs6'}
-// ]
 
 function App() {
 
-  // const dj=(subscriber: string,age:number)=>{
-  //   console.log(subscriber, age);
-  // }
+ const [money, setMoney] = useState([
+    { banknots: 'Dollars', value: 100, number: ' a1234567890 ' },
+    { banknots: 'Dollars', value: 50, number: ' z1234567890 ' },
+    { banknots: 'RUBLS', value: 100, number: ' w1234567890 ' },
+    { banknots: 'Dollars', value: 100, number: ' e1234567890 ' },
+    { banknots: 'Dollars', value: 50, number: ' c1234567890 ' },
+    { banknots: 'RUBLS', value: 100, number: ' r1234567890  ' },
+    { banknots: 'Dollars', value: 50, number: ' x1234567890 ' },
+    { banknots: 'RUBLS', value: 50, number: ' v1234567890 ' },
+  ])            
 
-  // const ds=(subscriber:string, age: number, address: string)=>{
-  //   console.log(subscriber, age, address);
-  // }
+  // const [filter, setFilter] =useState<FilterType>('all')
+  
+  // let filteredMoney = money;
 
-  // const stb=()=>{
-  //   console.log('Im stupid button');
+  //   if(filter === 'Dollars'){
+  //   filteredMoney = money.filter((el)=> el.banknots==='Dollars')
     
   // }
-  
-  let[a, setA]=useState(1)
-  
-  const plusOne=()=>{
-    setA(++a);
-  }
-  const zero=()=>{
-    setA(0)
-  }
+  // if(filter === "RUBLS"){
+  //  filteredMoney = money.filter((el)=> el.banknots==='RUBLS')   
+  // }
+ 
+  // let onClickFilterHandler=(name: FilterType)=>{
+  //   setFilter(name)
+  // }
 
-  return (
-    <div className="App">
-    {/* <Header title={'BIG HEADER, WERY BIG'}/>
-    <Body titleBody={'NEW BIG BODY'}/>
-    <Footer titleFooter={'NEW WERY BIG FOOTER'}/> */}
-    {/* <NewComponent students={students} cars={topCars}/> */}
-    {/* <ButtonChanel name={'GovnoChanel'} follower={()=>dj('Grisha', 45)}/>
-    <ButtonChanel name={'DermoChanel'} follower={()=>ds('Vitek', 76, 'Ostryaki')}/>
-    <ButtonChanel name={'ProstoButton'} follower={stb}/> */}
-    <h1>{a}</h1>
-    <button onClick={plusOne}>Clicker</button>
-    <button onClick={zero}>0</button>
+ return (
+    <div className="App"> 
+    <MoneyComponent money={money} />
+    {/* <ul>
+      {filteredMoney.map((obj, index:number)=>{
+        return(
+        <li key={index}>
+          <span>{obj.banknots}</span>
+          <span>{obj.number}</span>
+          <span>{obj.value}</span>
+      </li>
+      )})} 
+    </ul>
+        <div style={{marginLeft:'40px'}}>
+          <button onClick={()=>onClickFilterHandler('all')}>all</button>
+          <button onClick={()=>onClickFilterHandler('Dollars')}>Dollars</button>
+          <button onClick={()=>onClickFilterHandler('RUBLS')}>RUBLS</button>
+        </div> */}
+
     </div>
   );
 }

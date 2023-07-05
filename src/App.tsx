@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Header } from './site/Header';
-import { Body } from './site/Body';
-import { Footer } from './site/Footer';
-import { NewComponent } from './site/NewComponent';
-import { ButtonChanel } from './site/ButtonChanel';
-import { type } from 'os';
-import MoneyComponent from './site/MoneyComponent';
+import { Fullinput } from './site/Fullinput';
 
 
 export type FilterType = 'all' | 'Dollars' | 'RUBLS'
@@ -15,17 +8,25 @@ export type FilterType = 'all' | 'Dollars' | 'RUBLS'
 
 
 function App() {
+  let [message, setMessage] = useState([
+    {message: 'message1'},
+    {message: 'message2'},
+    {message: 'message3'},
+])
+const addMessage=(title: string)=>{
+  console.log(title)
+}
 
- const [money, setMoney] = useState([
-    { banknots: 'Dollars', value: 100, number: ' a1234567890 ' },
-    { banknots: 'Dollars', value: 50, number: ' z1234567890 ' },
-    { banknots: 'RUBLS', value: 100, number: ' w1234567890 ' },
-    { banknots: 'Dollars', value: 100, number: ' e1234567890 ' },
-    { banknots: 'Dollars', value: 50, number: ' c1234567890 ' },
-    { banknots: 'RUBLS', value: 100, number: ' r1234567890  ' },
-    { banknots: 'Dollars', value: 50, number: ' x1234567890 ' },
-    { banknots: 'RUBLS', value: 50, number: ' v1234567890 ' },
-  ])            
+//  const [money, setMoney] = useState([
+//     { banknots: 'Dollars', value: 100, number: ' a1234567890 ' },
+//     { banknots: 'Dollars', value: 50, number: ' z1234567890 ' },
+//     { banknots: 'RUBLS', value: 100, number: ' w1234567890 ' },
+//     { banknots: 'Dollars', value: 100, number: ' e1234567890 ' },
+//     { banknots: 'Dollars', value: 50, number: ' c1234567890 ' },
+//     { banknots: 'RUBLS', value: 100, number: ' r1234567890  ' },
+//     { banknots: 'Dollars', value: 50, number: ' x1234567890 ' },
+//     { banknots: 'RUBLS', value: 50, number: ' v1234567890 ' },
+//   ])            
 
   // const [filter, setFilter] =useState<FilterType>('all')
   
@@ -45,7 +46,18 @@ function App() {
 
  return (
     <div className="App"> 
-    <MoneyComponent money={money} />
+    {/* <div>
+      <input/>
+      <button>+</button>
+    </div> */}
+    <Fullinput addMessage={addMessage}/>
+    {message.map((el)=> {
+      return(
+        <div>{el.message}</div>
+      )
+    })}
+   
+    {/* <MoneyComponent money={money} /> */}
     {/* <ul>
       {filteredMoney.map((obj, index:number)=>{
         return(

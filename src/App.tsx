@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Fullinput } from './site/Fullinput';
-
-
+import { Input } from './site/Input';
+import { Button } from './site/Button';
 export type FilterType = 'all' | 'Dollars' | 'RUBLS'
 
 
@@ -13,6 +12,9 @@ function App() {
     {message: 'message2'},
     {message: 'message3'},
 ])
+
+let [title, setTitle]=useState('')
+
 const addMessage=(title: string)=>{
  let newMessage = {message: title};
  setMessage([newMessage, ...message])
@@ -47,16 +49,22 @@ const addMessage=(title: string)=>{
 
  return (
     <div className="App"> 
+    <Input setTitle={setTitle} title={title}/>
+    <Button name='save' callback={()=>{}}/>
+    {message.map((el)=>{
+    return (
+      <div>{el.message}</div>
+    )})}
     {/* <div>
       <input/>
       <button>+</button>
     </div> */}
-    <Fullinput addMessage={addMessage}/>
+    {/* <Fullinput addMessage={addMessage}/>
     {message.map((el)=> {
       return(
         <div>{el.message}</div>
       )
-    })}
+    })} */}
    
     {/* <MoneyComponent money={money} /> */}
     {/* <ul>

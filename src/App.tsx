@@ -47,10 +47,15 @@ const addMessage=(title: string)=>{
   //   setFilter(name)
   // }
 
+const callBackButtonHandler=()=>{
+  addMessage(title);
+  setTitle('')
+}
+
  return (
     <div className="App"> 
     <Input setTitle={setTitle} title={title}/>
-    <Button name='save' callback={()=>{}}/>
+    <Button name='save' callback={callBackButtonHandler}/>
     {message.map((el)=>{
     return (
       <div>{el.message}</div>

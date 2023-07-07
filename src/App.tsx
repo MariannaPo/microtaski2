@@ -14,7 +14,8 @@ function App() {
     {message: 'message3'},
 ])
 const addMessage=(title: string)=>{
-  console.log(title)
+ let newMessage = {message: title};
+ setMessage([newMessage, ...message])
 }
 
 //  const [money, setMoney] = useState([

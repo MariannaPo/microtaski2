@@ -13,11 +13,12 @@ export const Fullinput=(props: FullInputPropsType)=>{
     }
 
     const onClickHandler=()=>{
-        props.addMessage(title)
+        props.addMessage(title);
+        setTitle('');
     }
     return(
          <div>
-      <input onChange={onChangeInputHandler}/>
+      <input value={title} onChange={onChangeInputHandler}/>
       <button onClick={onClickHandler}>+</button>
     </div>
     )
